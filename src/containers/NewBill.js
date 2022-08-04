@@ -51,7 +51,7 @@ export default class NewBill {
   }
   handleSubmit = e => {
     e.preventDefault()
-    console.log('e.target.querySelector(`input[data-testid="datepicker"]`).value', e.target.querySelector(`input[data-testid="datepicker"]`).value)
+    //console.log('e.target.querySelector(`input[data-testid="datepicker"]`).value', e.target.querySelector(`input[data-testid="datepicker"]`).value)
     
     if (formatPicture > 0) {
       const email = JSON.parse(localStorage.getItem("user")).email
@@ -83,7 +83,7 @@ export default class NewBill {
       .update({data: JSON.stringify(bill), selector: this.billId})
       .then(() => {
         this.onNavigate(ROUTES_PATH['Bills'])
-        validFile()
+        
       })
       .catch(error => console.error(error))
     }
